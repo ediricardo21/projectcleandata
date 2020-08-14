@@ -54,5 +54,5 @@ colnames(tidy) <- c("Subject","Activity","Variable","Value")
 #Create final tidydataset
 
 tidydata <- dcast(tidy,Subject+Activity~ Variable,mean,value.var = "Value")
-View(tidydata)
+write.table(tidyData, "./tidy_dataset.txt", row.names = FALSE, quote = FALSE)
 
